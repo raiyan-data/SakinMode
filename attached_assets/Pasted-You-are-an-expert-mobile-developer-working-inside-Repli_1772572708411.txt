@@ -1,0 +1,127 @@
+You are an expert mobile developer working inside Replit Agent mode.
+
+Create a COMPLETE, RUNNABLE Android mobile app called **SalahLock** inside this Replit workspace.
+
+IMPORTANT DEVELOPMENT RULES:
+
+* You must set up the correct project structure automatically.
+* Install all required dependencies yourself.
+* Ensure the app runs successfully inside Replit.
+* Fix errors automatically before continuing.
+* Do NOT generate placeholder-only code.
+* Implement real working functionality step-by-step.
+* After each major step, briefly explain what you completed.
+
+---
+
+## APP PURPOSE
+
+SalahLock is an Islamic productivity app that temporarily locks distracting apps during Muslim prayer times and encourages consistent daily prayer habits.
+
+---
+
+## TECH STACK (REQUIRED)
+
+Frontend: Flutter (Dart)
+Platform: Android-first
+Backend services: Firebase (Auth, Firestore, Analytics, Notifications)
+Prayer Times API: Aladhan API
+Architecture: clean separation (UI / services / models)
+
+Initialize a Flutter project properly for Android deployment.
+
+---
+
+## CORE FEATURES (MVP)
+
+1. PRAYER TIME SYSTEM
+
+* Request location permission.
+* Detect user location automatically.
+* Fetch daily prayer times using Aladhan API.
+* Display:
+
+  * next prayer
+  * countdown timer
+* Allow manual city selection fallback.
+* Send notification reminders 10 minutes before prayer.
+
+2. APP LOCK SYSTEM (MAIN FEATURE)
+
+* User selects apps to block.
+* Use Android Accessibility Service to monitor foreground apps.
+* During prayer time:
+
+  * block selected apps for 5–10 minutes
+  * show fullscreen screen saying:
+    “It’s time for salah.”
+* Include limited emergency unlock (max 2 per day).
+* Automatically unlock after timer finishes.
+
+3. DAILY AYAH & HADITH
+
+* Display daily ayah and hadith.
+* Load from local JSON dataset initially.
+* Include short reflection text.
+
+4. PRAYER TRACKING
+
+* Button: “I prayed”.
+* Track daily streak count.
+* Save locally and sync with Firebase Firestore.
+
+5. SETTINGS PAGE
+
+* Select locked apps.
+* Toggle notifications.
+* Choose lock duration.
+* Enable dark mode.
+
+---
+
+## UI REQUIREMENTS
+
+* Clean minimal design.
+* Calm Islamic-inspired colors.
+* Bottom navigation with:
+  Home | Progress | Daily | Settings
+* Responsive layout.
+* Loading indicators and error handling required.
+
+---
+
+## ANDROID PERMISSIONS
+
+Implement correctly:
+
+* Location permission
+* Notification permission
+* Accessibility Service permission for app blocking
+
+Handle denied permissions gracefully.
+
+---
+
+## DEVELOPMENT ORDER (FOLLOW STRICTLY)
+
+STEP 1: Initialize Flutter project and verify it runs.
+STEP 2: Build navigation + basic UI screens.
+STEP 3: Implement prayer time API + countdown timer.
+STEP 4: Add notification reminders.
+STEP 5: Implement Accessibility Service app-lock system.
+STEP 6: Add daily ayah/hadith system.
+STEP 7: Add prayer tracking with Firebase.
+STEP 8: Polish UI and optimize performance.
+
+Do NOT skip steps.
+
+---
+
+## DELIVERABLES
+
+* Fully runnable Flutter project in Replit.
+* Clear run instructions.
+* Working Android build configuration.
+* Code comments explaining complex logic.
+
+Begin by initializing the Flutter project and setting up the folder structure now.

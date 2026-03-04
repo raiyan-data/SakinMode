@@ -1,0 +1,161 @@
+Improve and fully repair the existing Settings system in the SalahLock project.
+
+IMPORTANT:
+- Do NOT recreate the app.
+- Do NOT modify unrelated features.
+- Only fix and enhance the Settings functionality.
+- Preserve current UI styling and navigation structure.
+
+The goal is to make ALL settings functional, persistent, and production-ready.
+
+--------------------------------------------------
+
+## 1. SETTINGS ARCHITECTURE FIX
+
+Create a centralized Settings State system.
+
+Requirements:
+
+- Create a SettingsContext (or global state/store).
+- Settings must persist using AsyncStorage (or existing storage system).
+- Settings load automatically on app startup.
+- Any change updates immediately across the app without restart.
+
+Settings should include:
+
+- themeMode (light | dark | system)
+- language
+- location (city + country)
+- notificationsEnabled
+- onboardingCompleted
+
+--------------------------------------------------
+
+## 2. DARK / LIGHT MODE (CURRENTLY BROKEN)
+
+Fix theme switching so that:
+
+- selecting Light/Dark updates UI instantly
+- navigation, backgrounds, and text update dynamically
+- theme persists after app restart
+- system mode follows device preference
+
+Implementation rules:
+
+- Use a ThemeProvider or equivalent.
+- Avoid page reloads.
+- Apply theme globally.
+
+--------------------------------------------------
+
+## 3. LANGUAGE SETTING (CURRENTLY NON-FUNCTIONAL)
+
+Make language selector interactive.
+
+Requirements:
+
+- Settings option must be clickable.
+- Selecting language updates visible UI text.
+- Store selected language persistently.
+- Default language = English.
+
+Prepare structure for future translations (do not hardcode logic).
+
+--------------------------------------------------
+
+## 4. RESET ONBOARDING BUTTON
+
+Fix “Reset Onboarding”.
+
+When pressed:
+
+- clear onboardingCompleted flag
+- return user to onboarding flow on next app launch
+- show confirmation dialog before reset
+
+Example flow:
+"Are you sure you want to restart setup?"
+
+--------------------------------------------------
+
+## 5. SEND FEEDBACK BUTTON (NOT CLICKABLE)
+
+Make this button functional.
+
+Behavior:
+
+- opens user's email app using mailto link
+- recipient: support@salahlock.app
+- subject: "SalahLock Feedback"
+- include app version automatically if available
+
+If email cannot open, show fallback alert.
+
+--------------------------------------------------
+
+## 6. LOCATION SETTINGS (PREP FOR PRAYER TIMES)
+
+Add functional location setting:
+
+User can:
+- auto-detect location OR
+- manually select city
+
+Store only:
+- city
+- country
+- timezone
+
+DO NOT store exact coordinates for privacy.
+
+Location updates should trigger prayer time recalculation.
+
+--------------------------------------------------
+
+## 7. COMMUNITY SETTINGS PLACEHOLDER
+
+Add settings section labeled "Community".
+
+For now include:
+
+- Toggle: Allow Nearby Groups Discovery
+- Toggle: Receive Community Notifications
+
+These should save state even if Community feature is not yet implemented.
+
+--------------------------------------------------
+
+## 8. UX IMPROVEMENTS
+
+Add:
+
+- clickable feedback animations
+- loading indicators when saving settings
+- confirmation toast/snackbar after changes
+
+Example:
+"Settings saved"
+
+--------------------------------------------------
+
+## 9. RELIABILITY REQUIREMENTS
+
+Ensure:
+
+- no settings buttons are dead/non-clickable
+- no console errors
+- settings persist after reload
+- app does not crash if storage is empty
+
+--------------------------------------------------
+
+## 10. AFTER COMPLETION
+
+After implementing, briefly explain:
+
+- what was fixed
+- how persistence works
+- where settings are stored
+- how new settings can be added later
+
+Begin by auditing the current Settings screen and repairing broken interactions first.

@@ -1,0 +1,100 @@
+FEATURE EXPANSION — HABIT & EXPERIENCE FEATURES
+
+SMART PRE-PRAYER MODE
+
+Add a preparation notification 10–15 minutes before each prayer.
+
+Message example: “Prayer is approaching — begin wrapping up.”
+
+This should occur before the app lock activates.
+
+Allow users to enable/disable this in Settings.
+
+MISSED PRAYER SUPPORT
+
+Detect when a prayer passes without user confirmation.
+
+Send a gentle reminder notification later.
+
+Tone must be supportive and non-judgmental.
+
+AFTER-PRAYER SCREEN
+When the lock period ends:
+
+Show a calm completion screen displaying:
+“Alhamdulillah.”
+
+Include:
+
+optional reflection prompt
+
+small dhikr counter button
+
+User can dismiss anytime.
+
+PRODUCTIVITY & INSIGHT FEATURES
+
+FOCUS SCORE DASHBOARD
+Create a Progress analytics section that tracks:
+
+total minutes of apps blocked
+
+estimated distraction time saved
+
+weekly prayer consistency percentage
+
+Display using simple charts or progress indicators.
+
+INTENTIONAL UNLOCK FLOW
+When a locked app is opened during prayer:
+
+Show pause screen with short reminder message or dua.
+
+Require a short delay before emergency unlock activates.
+
+Respect existing emergency unlock limits.
+
+SEASONAL FEATURE
+
+RAMADAN MODE
+Automatically activate during Ramadan dates:
+
+Add:
+
+Suhoor reminder notification
+
+Iftar reminder notification
+
+Quran reading progress tracker
+
+Taraweeh attendance tracker
+
+Ramadan progress calendar
+
+Allow manual toggle for testing.
+
+OPTIONAL SOCIAL FEATURE
+
+ACCOUNTABILITY CIRCLES (BASIC VERSION)
+
+Allow user to create or join small private groups.
+
+Share prayer streak counts only.
+
+No public rankings or leaderboards.
+
+IMPLEMENTATION RULES
+
+Do not modify working core systems unless required.
+
+Maintain clean architecture already in project.
+
+Add necessary models/services instead of large files.
+
+Handle errors and permissions safely.
+
+Ensure app builds successfully after each feature.
+
+After completing each feature, briefly explain what was added before continuing.
+
+Begin with Feature 1: Smart Pre-Prayer Mode.

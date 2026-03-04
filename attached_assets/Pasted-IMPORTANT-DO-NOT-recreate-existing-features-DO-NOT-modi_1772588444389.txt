@@ -1,0 +1,239 @@
+IMPORTANT:
+
+DO NOT recreate existing features.
+
+DO NOT modify prayer systems, lock systems, onboarding flow, or daily content logic unless explicitly required.
+
+Follow existing architecture, UI style, and state management patterns.
+
+Maintain a calm, minimal, non-social-media design philosophy.
+
+The Community system should feel like a local masjid extension, not a social network.
+
+COMMUNITY TAB IMPLEMENTATION
+
+Add a new bottom navigation tab labeled "Community".
+
+Purpose:
+Enable local Muslim interaction centered around prayer reminders, small groups, and real-world events.
+
+The tab contains three main sections:
+
+Local Groups
+
+Events
+
+Announcements
+
+Use clean cards and minimal interaction design.
+
+LOCATION INTEGRATION (REQUIRED)
+
+Use the user's onboarding location data (city/area only).
+
+DO NOT store precise addresses.
+
+Community content must automatically filter by:
+
+city
+
+region radius (configurable)
+
+Users only see nearby communities by default.
+
+FEATURE 1 — LOCAL GROUPS
+
+Allow users to:
+
+• Create a group
+• Join via invite code
+• Discover nearby groups based on city/location radius
+
+Group model includes:
+
+groupId
+
+groupName
+
+description
+
+city
+
+groupType ("general", "brothers", "sisters")
+
+creatorId
+
+memberList
+
+memberCount
+
+createdAt
+
+Rules:
+
+Limit group size (configurable cap).
+
+Prevent large public-network behavior.
+
+Groups are community-focused, not chat platforms.
+
+COMMUNITY SEGMENTATION
+
+Respect community preferences selected during onboarding.
+
+Users choose:
+
+Brothers spaces
+
+Sisters spaces
+
+General spaces
+
+Visibility rules:
+
+Users only see groups matching their preference.
+
+General groups visible to all.
+
+No hard identity verification required (trust-based system).
+
+Filtering happens client-side AND Firestore query level.
+
+FEATURE 2 — GROUP REMINDERS
+
+Inside each group:
+
+Members can send short reminder messages.
+
+Requirements:
+
+Reminder text only (no media uploads).
+
+Character limit enforced.
+
+Daily reminder limit per user.
+
+Respectful push notifications.
+
+Design goal:
+Encourage beneficial reminders without turning into chat or spam.
+
+Firestore structure example:
+groups/{groupId}/reminders/{reminderId}
+
+Fields:
+
+senderId
+
+message
+
+timestamp
+
+FEATURE 3 — EVENTS SYSTEM
+
+Add an Events section within Community tab.
+
+Users can:
+• Create events
+• View upcoming events
+• RSVP or mark Interested
+
+Event fields:
+
+eventId
+
+title
+
+description
+
+locationName (no exact address required)
+
+city
+
+dateTime
+
+organizerId
+
+organizerType ("user" | "masjid")
+
+attendeesCount
+
+Sort events by upcoming date.
+
+FEATURE 4 — MASJID ACCOUNTS (BASIC VERSION)
+
+Extend user model with:
+
+accountType:
+
+"user"
+
+"masjid"
+
+Masjid accounts can:
+
+create verified events
+
+post announcements
+
+Masjid posts appear across:
+
+General community
+
+Local event listings
+
+No advanced verification yet (placeholder system allowed).
+
+FIREBASE IMPLEMENTATION
+
+Use Firebase Firestore collections:
+
+/users
+/groups
+/events
+/announcements
+
+Follow privacy-first design:
+
+store minimal personal data
+
+avoid precise location storage
+
+secure queries using user city filters
+
+UI & EXPERIENCE RULES
+
+Calm Islamic aesthetic.
+
+No infinite scrolling feeds.
+
+No likes, followers, or algorithmic ranking.
+
+Focus on real-world community connection.
+
+DEVELOPMENT ORDER
+
+Implement sequentially:
+
+Community tab navigation UI
+
+Local Groups system
+
+Segmentation filtering logic
+
+Group reminders
+
+Events system
+
+Masjid account capability
+
+After completing EACH feature:
+Provide a short explanation of:
+
+files added
+
+database structure created
+
+logic implemented
+
+Begin implementation now starting with Community tab navigation and Local Groups feature only.

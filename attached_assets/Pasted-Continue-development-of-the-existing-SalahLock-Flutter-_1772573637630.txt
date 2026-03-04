@@ -1,0 +1,100 @@
+Continue development of the existing SalahLock Flutter project.
+
+Do NOT recreate the project structure, dependencies, or previously implemented systems. Extend the current app by adding the following new features step-by-step while keeping the app stable and runnable at all times.
+
+Only implement NEW functionality listed below.
+
+---
+
+## FEATURE EXPANSION — HABIT & EXPERIENCE FEATURES
+
+1. SMART PRE-PRAYER MODE
+
+* Add a preparation notification 10–15 minutes before each prayer.
+* Message example: “Prayer is approaching — begin wrapping up.”
+* This should occur before the app lock activates.
+* Allow users to enable/disable this in Settings.
+
+---
+
+2. MISSED PRAYER SUPPORT
+
+* Detect when a prayer passes without user confirmation.
+* Send a gentle reminder notification later.
+* Tone must be supportive and non-judgmental.
+
+---
+
+3. AFTER-PRAYER SCREEN
+   When the lock period ends:
+
+* Show a calm completion screen displaying:
+  “Alhamdulillah.”
+* Include:
+
+  * optional reflection prompt
+  * small dhikr counter button
+* User can dismiss anytime.
+
+---
+
+## PRODUCTIVITY & INSIGHT FEATURES
+
+4. FOCUS SCORE DASHBOARD
+   Create a Progress analytics section that tracks:
+
+* total minutes of apps blocked
+* estimated distraction time saved
+* weekly prayer consistency percentage
+
+Display using simple charts or progress indicators.
+
+---
+
+5. INTENTIONAL UNLOCK FLOW
+   When a locked app is opened during prayer:
+
+* Show pause screen with short reminder message or dua.
+* Require a short delay before emergency unlock activates.
+* Respect existing emergency unlock limits.
+
+---
+
+## SEASONAL FEATURE
+
+6. RAMADAN MODE
+   Automatically activate during Ramadan dates:
+
+Add:
+
+* Suhoor reminder notification
+* Iftar reminder notification
+* Quran reading progress tracker
+* Taraweeh attendance tracker
+* Ramadan progress calendar
+
+Allow manual toggle for testing.
+
+---
+
+## OPTIONAL SOCIAL FEATURE
+
+7. ACCOUNTABILITY CIRCLES (BASIC VERSION)
+
+* Allow user to create or join small private groups.
+* Share prayer streak counts only.
+* No public rankings or leaderboards.
+
+---
+
+## IMPLEMENTATION RULES
+
+* Do not modify working core systems unless required.
+* Maintain clean architecture already in project.
+* Add necessary models/services instead of large files.
+* Handle errors and permissions safely.
+* Ensure app builds successfully after each feature.
+
+After completing each feature, briefly explain what was added before continuing.
+
+Begin with Feature 1: Smart Pre-Prayer Mode.
